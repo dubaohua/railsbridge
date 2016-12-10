@@ -12,6 +12,9 @@ class TopicsController < ApplicationController
   def show
   end
 
+  def about
+    end
+
   # GET /topics/new
   def new
     @topic = Topic.new
@@ -74,6 +77,9 @@ def downvote
   @topic.update_attributes(count: @topic.votes.count)
   redirect_to(topics_path)
 end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
