@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
   end
 
   def about
-    end
+  end
 
   # GET /topics/new
   def new
@@ -73,7 +73,7 @@ end
 
 def downvote
   @topic = Topic.find(params[:id])
-  @topic.votes.first.destroy
+  @topic.votes.first.destroy if @topic.votes.count>0
   @topic.update_attributes(count: @topic.votes.count)
   redirect_to(topics_path)
 end
